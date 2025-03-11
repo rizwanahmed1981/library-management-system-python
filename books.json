@@ -1,0 +1,42 @@
+{
+    "The Great Gatsby": {
+        "author": "F. Scott Fitzgerald",
+        "publication_year": 1925,
+        "genre": "Fiction"
+    },
+    "1984": {
+        "author": "George Orwell",
+        "publication_year": 1949,
+        "genre": "Dystopian"
+    },
+    "To Kill a Mockingbird": {
+        "author": "Harper Lee",
+        "publication_year": 1960,
+        "genre": "Fiction"
+    },
+    "The Catcher in the Rye": {
+        "author": "J.D. Salinger",
+        "publication_year": 1951,
+        "genre": "Fiction"
+    },
+    "The Lord of the Rings": {
+        "author": "J.R.R. Tolkien",
+        "publication_year": 1954,
+        "genre": "Fantasy"
+    },
+    "Pride and Prejudice": {
+        "author": "Jane Austen",
+        "publication_year": 1813,
+        "genre": "Romance"
+    },
+    "The Alchemist": {
+        "author": "Paulo Coelho",
+        "publication_year": 1988,
+        "genre": "Adventure, Fantasy"
+    },
+    "Moby-Dick": {
+        "author": "Herman Melville",
+        "publication_year": 1851,
+        "genre": "Adventure"
+    }
+}
