@@ -4,7 +4,14 @@ from users import *
 # Admin functionality
 
 def admin_funct():
-    print(f"1: Add book, 2: update book, 3: delete book, 4: Veiw inventory, 5: add user, 6: delete user 0: Quit")
+    print(f"""1: Add book,
+          2: update book,
+          3: delete book,
+          4: Veiw inventory,
+          5: add user,
+          6: delete user,
+          7: for user list,
+          0: Quit""")
     admin_input = input("what do you want to do? ")
     
     if admin_input == "1":
@@ -24,13 +31,14 @@ def admin_funct():
     elif admin_input == "6":
         user_name = input("Enter user name to delete: ").lower()
         delete_user(user_name)
+    elif admin_input == "7":
+        user_list()
     elif admin_input == "0":
         print("Thank You Admin have a Nice Day 😊 ")
         exit()
     else:
         print("invalid input! please choose a correct option")
-        print(f"1: Add book, 2: update book, 3: delete book, 4: Veiw inventory, 5: add user, 6: delete user, 0: to Quit: ")
-        admin_input = input("what do you want to do? ")
+        admin_funct()
         
 # book addition function
 def add_book():
@@ -146,6 +154,16 @@ def delete_user(user_name):
         print(f"✔user account named {user_name} deleted permanentely!")
     else:
         print(f"❌ user account name {user_name} not found")
+    print("=====================================================")
+    admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
+    if admin_input2 == "yes":
+        admin_funct()
+    else:
+        print("Thank You Admin have a Nice Day 😊 ")
+        exit()
+        
+def user_list():
+    print(users)
     print("=====================================================")
     admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
     if admin_input2 == "yes":
