@@ -93,4 +93,4 @@ def inventory():
         exit()
 
 # calling user function
-user_function()
+# user_function()

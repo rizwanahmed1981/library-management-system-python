@@ -1,11 +1,14 @@
 {
+    "admin": {
+        "password": "123456"
+    },
     "user1": {
-        "password": "pass123"
+        "password": "124578"
     },
     "user2": {
-        "password": "secure456"
+        "password": "784512"
     },
     "user3": {
-        "password": "strong789"
+        "password": "456789"
     }
 }

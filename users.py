@@ -2,9 +2,10 @@ import json
 import os
 
 users = {
-    "user1": {"password": "pass123"},
-    "user2": {"password": "secure456"},
-    "user3": {"password": "strong789"}
+    "admin": {"password": "123456"},
+    "user1": {"password": "124578"},
+    "user2": {"password": "784512"},
+    "user3": {"password": "456789"}
 }
 
 
@@ -12,7 +13,7 @@ def save_user():
     with open("user.json", "w") as file:
         json.dump(users, file, indent=4)
         
-save_user()
+# save_user()
 
 def load_user():
     """Loads the users from json file"""
