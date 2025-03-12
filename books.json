@@ -38,5 +38,10 @@
         "author": "Herman Melville",
         "publication_year": 1851,
         "genre": "Adventure"
+    },
+    "hafiz": {
+        "author": "shahzad",
+        "publication_year": "1993",
+        "genre": "action"
     }
 }

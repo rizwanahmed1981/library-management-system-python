@@ -1,4 +1,6 @@
 from inventory import *
+from users import *
+
 # Admin functionality
 
 def admin_funct():
@@ -16,15 +18,18 @@ def admin_funct():
     elif admin_input == "4":
         veiw_inventory()
     elif admin_input == "5":
-        add_new_user()
+        user_name = input("Enter new user name: ").lower()
+        user_password = input("Enter user password: ").lower()
+        add_new_user(user_name, user_password)
     elif admin_input == "6":
-        delete_user()
+        user_name = input("Enter user name to delete: ").lower()
+        delete_user(user_name)
     elif admin_input == "0":
         print("Thank You Admin have a Nice Day 😊 ")
         exit()
     else:
         print("invalid input! please choose a correct option")
-        print(f"1: Add book, 2: update book, 3: delete book, 4: Veiw inventory, 5: add user, 6: delete user")
+        print(f"1: Add book, 2: update book, 3: delete book, 4: Veiw inventory, 5: add user, 6: delete user, 0: to Quit: ")
         admin_input = input("what do you want to do? ")
         
 # book addition function
@@ -115,8 +120,15 @@ def veiw_inventory():
 
 
 # user addition function by admin
-def add_new_user():
-    print("user added")
+def add_new_user(user_name, user_password):
+    if user_name in users:
+        print("⛔ user already exists: ")
+    else:
+        users[user_name] = {
+            "password": user_password
+        }
+        save_user()
+    print(f"✔new user {user_name} added")
     print("=====================================================")
     admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
     if admin_input2 == "yes":
@@ -127,8 +139,13 @@ def add_new_user():
         
         
 # user deletion function by admin
-def delete_user():
-    print("book deleted")
+def delete_user(user_name):
+    if user_name in users:
+        del users[user_name]
+        save_user()
+        print(f"✔user account named {user_name} deleted permanentely!")
+    else:
+        print(f"❌ user account name {user_name} not found")
     print("=====================================================")
     admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
     if admin_input2 == "yes":
