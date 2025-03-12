@@ -2,6 +2,30 @@ from admin_functions import admin_funct
 from user_functions import user_function
 from users import users
 
+def login():
+    while True:  # Keep asking until valid login
+        username = input("Please enter your username: ").lower()
+        password = input("Please enter your password: ").lower()
+
+        # Check if user exists
+        if username in users and users[username]["password"] == password:
+            print(f"✅ Login Successful! Welcome back {username}!")
+
+            # If user is admin, call admin function
+            if username == "admin":
+                print("🎉 Welcome Admin 🙂🙂")
+                admin_funct()
+            else:
+                user_function()
+            break  # Exit loop after successful login
+
+        else:
+            print("❌ Incorrect username or password. Please try again.")
+
+# Run the login function
+login()
+
+"""
 id:str = input("please enter your user name: ").lower()
 password:str = input("please enter your password: ").lower()
 
@@ -24,7 +48,7 @@ for id in users:
         exit()
 
         
-
+"""
 
     
 # for id in range(users):

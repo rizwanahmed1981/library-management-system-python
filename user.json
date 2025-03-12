@@ -10,5 +10,8 @@
     },
     "user3": {
         "password": "456789"
+    },
+    "ali": {
+        "password": "4578"
     }
 }
