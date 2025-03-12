@@ -9,7 +9,9 @@ def user_function():
           1: To borrow new book,
           2: for your books collection,
           3: for returning book,
-          4: check for available books in labrary
+          4: check for available books in labrary,
+          5: search book in library,
+          6: search book in your collection,
           0: to Quit""")
     user_input = input("What do you want to do today: ").lower()
     if user_input == "1":
@@ -20,6 +22,10 @@ def user_function():
         return_book()
     elif user_input == "4":
         inventory()
+    elif user_input == "5":
+        search_book_in_library()
+    elif user_input == "6":
+        search_book_in_collection()
     elif user_input == "0":
         print("thank you for using our library, do visit again 🙂🙂")
         exit()
@@ -92,5 +98,52 @@ def inventory():
         print("Thank you for using our library, do visit again 🙂🙂")
         exit()
 
+
+def search_book_in_library():
+    title = input("Enter title of book: ")
+    if title in books:
+        print("matching book")
+        print(f"""{title.upper()} by {books[title]["author"]} ({books[title]["publication_year"]}) - {books[title]["genre"]} book exists""")
+        print("=================================================")
+        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
+        if user_input2 == "yes":
+            user_function()
+        else:
+            print("Thank you for using our library, do visit again 🙂🙂")
+            exit()
+    else:
+        print(f"{title.title()} does not exists in library")
+        print("=================================================")
+        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
+        if user_input2 == "yes":
+            user_function()
+        else:
+            print("Thank you for using our library, do visit again 🙂🙂")
+            exit()
+
+
+def search_book_in_collection():
+    title = input("please enter title of the book")
+    if title in user_books:
+        print(f"""{title.upper()} borrowed at {user_books[title]["date"]} and completed {user_books[title]["read_percentage"]}""")
+        print("=================================================")
+        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
+        if user_input2 == "yes":
+            user_function()
+        else:
+            print("Thank you for using our library, do visit again 🙂🙂")
+            exit()
+    else:
+        print(f"""{title.title()} does not exists in your collection""")
+        print("=================================================")
+        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
+        if user_input2 == "yes":
+            user_function()
+        else:
+            print("Thank you for using our library, do visit again 🙂🙂")
+            exit()
+    
+# search_book_in_collection()
+# search_book_in_library()
 # calling user function
 # user_function()
