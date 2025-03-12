@@ -11,6 +11,7 @@ def admin_funct():
           5: add user,
           6: delete user,
           7: for user list,
+          8: search a book in library,
           0: Quit""")
     admin_input = input("what do you want to do? ")
     
@@ -33,6 +34,8 @@ def admin_funct():
         delete_user(user_name)
     elif admin_input == "7":
         user_list()
+    elif admin_input == "8":
+        search_in_library()
     elif admin_input == "0":
         print("Thank You Admin have a Nice Day 😊 ")
         exit()
@@ -171,3 +174,26 @@ def user_list():
     else:
         print("Thank You Admin have a Nice Day 😊 ")
         exit()
+        
+
+def search_in_library():
+    title = input("Enter title of book: ")
+    if title in books:
+        print("matching book")
+        print(f"""{title.upper()} by {books[title]["author"]} ({books[title]["publication_year"]}) - {books[title]["genre"]} book exists""")
+        print("=================================================")
+        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
+        if user_input2 == "yes":
+            admin_funct()
+        else:
+            print("Thank you for using our library, do visit again 🙂🙂")
+            exit()
+    else:
+        print(f"{title.title()} does not exists in library")
+        print("=================================================")
+        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
+        if user_input2 == "yes":
+            admin_funct()
+        else:
+            print("Thank you for using our library, do visit again 🙂🙂")
+            exit()
