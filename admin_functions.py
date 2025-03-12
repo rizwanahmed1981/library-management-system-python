@@ -4,7 +4,8 @@ from users import *
 # Admin functionality
 
 def admin_funct():
-    print(f"""1: Add book
+    print(f"""please select
+          1: Add book
           2: update book
           3: delete book
           4: Veiw inventory

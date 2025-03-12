@@ -9,11 +9,10 @@ def login():
 
         # Check if user exists
         if username in users and users[username]["password"] == password:
-            print(f"✅ Login Successful! Welcome back {username}!")
+            print(f"✅ Login Successful! Welcome back 🎉 {username.capitalize()} 🙂🙂!")
 
             # If user is admin, call admin function
             if username == "admin":
-                print("🎉 Welcome Admin 🙂🙂")
                 admin_funct()
             else:
                 user_function()
