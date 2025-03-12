@@ -4,14 +4,14 @@ from users import *
 # Admin functionality
 
 def admin_funct():
-    print(f"""1: Add book,
-          2: update book,
-          3: delete book,
-          4: Veiw inventory,
-          5: add user,
-          6: delete user,
-          7: for user list,
-          8: search a book in library,
+    print(f"""1: Add book
+          2: update book
+          3: delete book
+          4: Veiw inventory
+          5: add user
+          6: delete user
+          7: for user list
+          8: search a book in library
           0: Quit""")
     admin_input = input("what do you want to do? ")
     
@@ -179,7 +179,7 @@ def user_list():
 def search_in_library():
     title = input("Enter title of book: ")
     if title in books:
-        print("matching book")
+        print("matching book found ✔")
         print(f"""{title.upper()} by {books[title]["author"]} ({books[title]["publication_year"]}) - {books[title]["genre"]} book exists""")
         print("=================================================")
         user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
@@ -189,7 +189,7 @@ def search_in_library():
             print("Thank you for using our library, do visit again 🙂🙂")
             exit()
     else:
-        print(f"{title.title()} does not exists in library")
+        print(f"⛔ {title.title()} does not exists in library")
         print("=================================================")
         user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
         if user_input2 == "yes":
