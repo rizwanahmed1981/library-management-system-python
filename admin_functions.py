@@ -61,12 +61,7 @@ def add_book():
     print(f"✔ Book added: {new_book}")
     
     print("=====================================================")
-    admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
-    if admin_input2 == "yes":
-        admin_funct()
-    else:
-        print("Thank You Admin have a Nice Day 😊 ")
-        exit()
+    admin_function_recal()
 
 
 # book updation function
@@ -87,21 +82,11 @@ def update_book(book_name):
         save_book()
         print(f"✔ Book updated: {new_book}")
         print("=====================================================")
-        admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
-        if admin_input2 == "yes":
-            admin_funct()
-        else:
-            print("Thank You Admin have a Nice Day 😊 ")
-            exit()
+        admin_function_recal()
     else:
         print(f"❌ book name {book_name} not found!")
         print("=====================================================")
-        admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
-        if admin_input2 == "yes":
-            admin_funct()
-        else:
-            print("Thank You Admin have a Nice Day 😊 ")
-            exit()
+        admin_function_recal()
 
 # book delete function    
 def delete_book(book_name):
@@ -112,23 +97,13 @@ def delete_book(book_name):
     else:
         print(f"❌ book name {book_name} not found!")
     print("=====================================================")
-    admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
-    if admin_input2 == "yes":
-        admin_funct()
-    else:
-        print("Thank You Admin have a Nice Day 😊 ")
-        exit()
+    admin_function_recal()
 
 # inventory veiw function
 def veiw_inventory():
     print(books)
     print("=====================================================")
-    admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
-    if admin_input2 == "yes":
-        admin_funct()
-    else:
-        print("Thank You Admin have a Nice Day 😊 ")
-        exit()
+    admin_function_recal()
 
 
 # user addition function by admin
@@ -142,12 +117,7 @@ def add_new_user(user_name, user_password):
         save_user()
     print(f"✔new user {user_name} added")
     print("=====================================================")
-    admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
-    if admin_input2 == "yes":
-        admin_funct()
-    else:
-        print("Thank You Admin have a Nice Day 😊 ")
-        exit()
+    admin_function_recal()
         
         
 # user deletion function by admin
@@ -159,22 +129,11 @@ def delete_user(user_name):
     else:
         print(f"❌ user account name {user_name} not found")
     print("=====================================================")
-    admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
-    if admin_input2 == "yes":
-        admin_funct()
-    else:
-        print("Thank You Admin have a Nice Day 😊 ")
-        exit()
+    admin_function_recal()
         
 def user_list():
     print(users)
-    print("=====================================================")
-    admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
-    if admin_input2 == "yes":
-        admin_funct()
-    else:
-        print("Thank You Admin have a Nice Day 😊 ")
-        exit()
+    admin_function_recal()
         
 
 def search_in_library():
@@ -183,18 +142,17 @@ def search_in_library():
         print("matching book found ✔")
         print(f"""{title.upper()} by {books[title]["author"]} ({books[title]["publication_year"]}) - {books[title]["genre"]} book exists""")
         print("=================================================")
-        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-        if user_input2 == "yes":
-            admin_funct()
-        else:
-            print("Thank you for using our library, do visit again 🙂🙂")
-            exit()
+        admin_function_recal()
     else:
         print(f"⛔ {title.title()} does not exists in library")
         print("=================================================")
-        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-        if user_input2 == "yes":
-            admin_funct()
-        else:
-            print("Thank you for using our library, do visit again 🙂🙂")
-            exit()
+        admin_function_recal()
+            
+            
+def admin_function_recal():
+    admin_input2 = input("Do you want to perform anything else Yes/ No: ").lower()
+    if admin_input2 == "yes":
+        admin_funct()
+    else:
+        print("Thank You Admin have a Nice Day 😊 ")
+        exit()

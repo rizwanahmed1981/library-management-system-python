@@ -48,25 +48,14 @@ def borrow_book():
     save_user_books()
     print(f"✔ new book {new_user_book} added to your collection:  ")
     print("=================================================")
-    user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-    if user_input2 == "yes":
-        user_function()
-    else:
-        print("Thank you for using our library, do visit again 🙂🙂")
-        exit()
+    user_function_recall()
       
       
 # user's books collection
 def user_inventory():
     print(user_books)
     print("=================================================")
-    user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-    if user_input2 == "yes":
-        user_function()
-    else:
-        print("Thank you for using our library, do visit again 🙂🙂")
-        exit()
-        
+    user_function_recall()
         
 # user returning books to library
 def return_book():
@@ -75,12 +64,7 @@ def return_book():
         del user_books[book_name]
         print(f"✔book {book_name} returned to library")
         print("=================================================")
-        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-        if user_input2 == "yes":
-            user_function()
-        else:
-            print("Thank you for using our library, do visit again 🙂🙂")
-            exit()
+        user_function_recall()
     else:
         print(f"❌ {book_name} does not exists in your collection")
         print("please select from your bellow collection")
@@ -91,12 +75,7 @@ def return_book():
 def inventory():
     print(books)
     print("=================================================")
-    user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-    if user_input2 == "yes":
-        user_function()
-    else:
-        print("Thank you for using our library, do visit again 🙂🙂")
-        exit()
+    user_function_recall()
 
 
 def search_book_in_library():
@@ -105,21 +84,11 @@ def search_book_in_library():
         print("matching book found ✔")
         print(f"""{title.upper()} by {books[title]["author"]} ({books[title]["publication_year"]}) - {books[title]["genre"]} book exists""")
         print("=================================================")
-        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-        if user_input2 == "yes":
-            user_function()
-        else:
-            print("Thank you for using our library, do visit again 🙂🙂")
-            exit()
+        user_function_recall()
     else:
         print(f"⛔ {title.title()} does not exists in library")
         print("=================================================")
-        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-        if user_input2 == "yes":
-            user_function()
-        else:
-            print("Thank you for using our library, do visit again 🙂🙂")
-            exit()
+        user_function_recall()
 
 
 def search_book_in_collection():
@@ -128,22 +97,22 @@ def search_book_in_collection():
         print("matching book found ✔")
         print(f"""{title.upper()} borrowed at {user_books[title]["date"]} and completed {user_books[title]["read_percentage"]}""")
         print("=================================================")
-        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-        if user_input2 == "yes":
-            user_function()
-        else:
-            print("Thank you for using our library, do visit again 🙂🙂")
-            exit()
+        user_function_recall()
     else:
         print(f"""⛔ {title.title()} does not exists in your collection""")
         print("=================================================")
-        user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
-        if user_input2 == "yes":
-            user_function()
-        else:
-            print("Thank you for using our library, do visit again 🙂🙂")
-            exit()
-    
+        user_function_recall()
+
+
+
+def user_function_recall():
+    user_input2 = input("Do you want to do anything else here? YES / NO: ").lower()
+    if user_input2 == "yes":
+        user_function()
+    else:
+        print("Thank you for using our library, do visit again 🙂🙂")
+        exit()
+
 # search_book_in_collection()
 # search_book_in_library()
 # calling user function
